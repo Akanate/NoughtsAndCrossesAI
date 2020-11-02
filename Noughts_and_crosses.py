@@ -71,7 +71,7 @@ class NoughtsAndCrosses:
             os.system('cls')
             self.menu()
 
-        #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES AND DEPENDENT ON TURN DOING MIN OR MAX
+        #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES.
         if self.turn == False:
             choice = input(f'Enter the number where you want to go >> ')
             if self.board[int(choice)-1].isdigit():
