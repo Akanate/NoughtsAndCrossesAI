@@ -55,14 +55,20 @@ class NoughtsAndCrosses:
         CheckWin = self.checkWinner()
         if CheckWin == 1:
             print(f'{values.get(self.ai)} has won!')
+            time.sleep(2)
+            os.system('cls')
             self.menu()
 
         elif CheckWin == -1:
             print(f'{values.get(self.human)} has won!')
+            time.sleep(2)
+            os.system('cls')
             self.menu()
         
         elif CheckWin == 0:
             print('Draw')
+            time.sleep(2)
+            os.system('cls')
             self.menu()
 
         #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES AND DEPENDENT ON TURN DOING MIN OR MAX
