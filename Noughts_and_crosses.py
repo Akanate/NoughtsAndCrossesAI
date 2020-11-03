@@ -47,6 +47,15 @@ class NoughtsAndCrosses:
             print('Invalid Choice!')
             self.menu()
 
+    def resetBoard(self):
+        self.board = [
+            '1','2','3',
+            '4','5','6',
+            '7','8','9'
+        ]
+        self.menu()
+
+
     def drawGrid(self):
         #CREATES NOUGHTS AND CROSSES GRID
         os.system('cls')
@@ -71,19 +80,20 @@ class NoughtsAndCrosses:
             print(f'{values.get(self.ai)} has won!')
             time.sleep(2)
             os.system('cls')
+            self.resetBoard()
             self.menu()
 
         elif CheckWin == -1:
             print(f'{values.get(self.human)} has won!')
             time.sleep(2)
             os.system('cls')
-            self.menu()
+            self.resetBoard()
         
         elif CheckWin == 0:
             print('Draw')
             time.sleep(2)
             os.system('cls')
-            self.menu()
+            self.resetBoard()
 
         #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES AND DEPENDENT ON TURN DOING MIN OR MAX
         if self.turn == False:
@@ -191,5 +201,3 @@ class NoughtsAndCrosses:
         
     
 NoughtsAndCrosses()
-
-
