@@ -5,7 +5,6 @@
 
 import os
 import time
-from colorama import Fore
 class NoughtsAndCrosses:
     def __init__(self):
         self.board = [
@@ -51,13 +50,13 @@ class NoughtsAndCrosses:
     def drawGrid(self):
         #CREATES NOUGHTS AND CROSSES GRID
         os.system('cls')
-        print('\\n')
-        print(f'\\t\\t   {self.board[0]}  |  {self.board[1]}  |  {self.board[2]}')
+        print('\n')
+        print(f'\t\t   {self.board[0]}  |  {self.board[1]}  |  {self.board[2]}')
         print('                  ---------------')
-        print(f'\\t\\t   {self.board[3]}  |  {self.board[4]}  |  {self.board[5]}')                                
+        print(f'\t\t   {self.board[3]}  |  {self.board[4]}  |  {self.board[5]}')                                
         print('                  ---------------')
-        print(f'\\t\\t   {self.board[6]}  |  {self.board[7]}  |  {self.board[8]}')
-        print('\\n')
+        print(f'\t\t   {self.board[6]}  |  {self.board[7]}  |  {self.board[8]}')
+        print('\n')
         print(f"YOU: {self.human} AI: {self.ai}")
         print(f"Max Depth: {self.depthMax} Min Depth: {self.depthMin}")
         if self.execution != None:
@@ -139,7 +138,7 @@ class NoughtsAndCrosses:
                     self.depthMax += 1
                     self.board[i] = self.ai
                     score = self.minimax(self.depthMax,False)
-                    if score > bestScore: bestScore=score
+                    bestScore = max(score,bestScore)
                     self.board[i] = str(i+1)
             return bestScore
         else:
@@ -152,7 +151,7 @@ class NoughtsAndCrosses:
                     self.depthMin += 1
                     self.board[i] = self.human
                     score = self.minimax(self.depthMin,True)
-                    if score < bestScore: bestScore=score
+                    bestScore = min(score,bestScore)
                     self.board[i] = str(i+1)
             return bestScore
 
@@ -193,5 +192,4 @@ class NoughtsAndCrosses:
     
 NoughtsAndCrosses()
 
-NoughtsAndCrosses()
 
