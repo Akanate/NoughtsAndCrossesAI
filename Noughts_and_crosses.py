@@ -3,7 +3,6 @@
 ######################
 
 
-from art import tprint
 import os
 import time
 from colorama import Fore
@@ -25,7 +24,20 @@ class NoughtsAndCrosses:
 
     def menu(self):
         #MAIN MENU
-        tprint("Welcome To Noughts And Crosses")
+        print(''' 
+    | \\ | |                 | |   | |       /\\             | |  / ____|                                 /\\   |_   _|
+    |  \\| | ___  _   _  __ _| |__ | |_     /  \\   _ __   __| | | |     _ __ ___  ___ ___  ___  ___     /  \\    | |  
+    | . ` |/ _ \\| | | |/ _` | '_ \\| __|   / /\\ \\ | '_ \\ / _` | | |    | '__/ _ \\/ __/ __|/ _ \\/ __|   / /\\ \\   | |  
+    | |\\  | (_) | |_| | (_| | | | | |_   / ____ \\| | | | (_| | | |____| | | (_) \\__ \\__ \\  __/\\__ \\  / ____ \\ _| |_ 
+    |_| \\_|\\___/ \\__,_|\\__, |_| |_|\\__| /_/    \\_\\_| |_|\\__,_|  \\_____|_|  \\___/|___/___/\\___||___/ /_/    \\_\\_____|
+    ____               __/ |                     _                                                                 
+    |  _ \\            /\\___/ |                   | |                                                                
+    | |_) |_   _     /  \\  | | ____ _ _ __   __ _| |_ ___                                                           
+    |  _ <| | | |   / /\\ \\ | |/ / _` | '_ \\ / _` | __/ _ \\                                                          
+    | |_) | |_| |  / ____ \\|   < (_| | | | | (_| | ||  __/                                                          
+    |____/ \\__, | /_/    \\_\\_|\\_\\__,_|_| |_|\\__,_|\\__\\___|                                                          
+            __/ |                                                                                                   
+            |___/  ''')
         choice = input('1.Start a game against an AI\n2.Exit\nEnter a choice: ')
         if choice == '1':
             self.drawGrid()
@@ -33,18 +45,19 @@ class NoughtsAndCrosses:
         elif choice == '2':
             exit()
         else:
+            print('Invalid Choice!')
             self.menu()
 
     def drawGrid(self):
         #CREATES NOUGHTS AND CROSSES GRID
         os.system('cls')
-        print('\n')
-        print(f'\t\t   {self.board[0]}  |  {self.board[1]}  |  {self.board[2]}')
+        print('\\n')
+        print(f'\\t\\t   {self.board[0]}  |  {self.board[1]}  |  {self.board[2]}')
         print('                  ---------------')
-        print(f'\t\t   {self.board[3]}  |  {self.board[4]}  |  {self.board[5]}')                                
+        print(f'\\t\\t   {self.board[3]}  |  {self.board[4]}  |  {self.board[5]}')                                
         print('                  ---------------')
-        print(f'\t\t   {self.board[6]}  |  {self.board[7]}  |  {self.board[8]}')
-        print('\n')
+        print(f'\\t\\t   {self.board[6]}  |  {self.board[7]}  |  {self.board[8]}')
+        print('\\n')
         print(f"YOU: {self.human} AI: {self.ai}")
         print(f"Max Depth: {self.depthMax} Min Depth: {self.depthMin}")
         if self.execution != None:
@@ -73,7 +86,7 @@ class NoughtsAndCrosses:
             os.system('cls')
             self.menu()
 
-        #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES.
+        #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES AND DEPENDENT ON TURN DOING MIN OR MAX
         if self.turn == False:
             choice = input(f'Enter the number where you want to go >> ')
             if self.board[int(choice)-1].isdigit():
@@ -178,5 +191,7 @@ class NoughtsAndCrosses:
                 
         
     
+NoughtsAndCrosses()
+
 NoughtsAndCrosses()
 
