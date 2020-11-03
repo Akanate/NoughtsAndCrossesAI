@@ -81,6 +81,7 @@ class NoughtsAndCrosses:
             time.sleep(2)
             os.system('cls')
             self.resetBoard()
+            self.menu()
 
         elif CheckWin == -1:
             print(f'{values.get(self.human)} has won!')
@@ -95,15 +96,20 @@ class NoughtsAndCrosses:
             self.resetBoard()
 
         #CHECKING WHOS TURN IT IS NOUGHTS OR CROSSSES AND DEPENDENT ON TURN DOING MIN OR MAX
-        if self.turn == False:
-            choice = input(f'Enter the number where you want to go >> ')
-            if self.board[int(choice)-1].isdigit():
-                self.board[int(choice)-1] = self.human
-            self.turn = True
+        try:
+            if self.turn == False:
+                choice = input(f'Enter the number where you want to go >> ')
+                if self.board[int(choice)-1].isdigit():
+                    self.board[int(choice)-1] = self.human
+                self.turn = True
+                self.drawGrid()
+            else:
+                self.turn = False
+                self.AI()
+        except IndexError:
+            print('Invalid Choice')
+            time.sleep(5)
             self.drawGrid()
-        else:
-            self.turn = False
-            self.AI()
 
 
     def AI(self):
@@ -114,6 +120,7 @@ class NoughtsAndCrosses:
         bestMove = 0
         start_time = time.time()
         for i in range(len(self.board)):
+
             if self.board[i].isalpha():
                 continue
             else:
