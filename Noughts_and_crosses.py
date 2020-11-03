@@ -32,6 +32,8 @@ class NoughtsAndCrosses:
              
         elif choice == '2':
             exit()
+        else:
+            self.menu()
 
     def drawGrid(self):
         #CREATES NOUGHTS AND CROSSES GRID
