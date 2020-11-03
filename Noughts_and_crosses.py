@@ -81,7 +81,6 @@ class NoughtsAndCrosses:
             time.sleep(2)
             os.system('cls')
             self.resetBoard()
-            self.menu()
 
         elif CheckWin == -1:
             print(f'{values.get(self.human)} has won!')
