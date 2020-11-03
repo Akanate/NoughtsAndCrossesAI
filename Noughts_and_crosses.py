@@ -14,8 +14,8 @@ class NoughtsAndCrosses:
         ]
         self.turn = False
         self.score = None
-        self.ai = 'X'   
-        self.human = 'O'
+        self.ai = 'O'   
+        self.human = 'X'
         self.depthMin = 0
         self.depthMax = 0
         self.execution = None
