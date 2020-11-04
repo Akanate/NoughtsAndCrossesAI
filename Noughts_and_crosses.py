@@ -106,7 +106,7 @@ class NoughtsAndCrosses:
             else:
                 self.turn = False
                 self.AI()
-        except IndexError:
+        except Exception:
             print('Invalid Choice')
             time.sleep(5)
             self.drawGrid()
@@ -205,5 +205,5 @@ class NoughtsAndCrosses:
         return None
                 
         
-    
+  
 NoughtsAndCrosses()
